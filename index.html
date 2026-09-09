@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Happy Birthday, Taymi! ✨ A Story For You</title>
+  <meta name="description" content="A special, story-driven birthday celebration for Taymi, filled with memories, laughter, and love.">
+  
+  <!-- Google Fonts: Playfair Display for elegance, Plus Jakarta Sans for modern clarity, Caveat for handwritten notes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="is-dark-prologue" id="pageBody">
+
+  <!-- Background Ambient Canvas for Floating Embers & Fairy Lights -->
+  <canvas id="ambientCanvas" class="ambient-canvas"></canvas>
+
+  <!-- Canvas for Grand Birthday Fireworks & Confetti -->
+  <canvas id="fireworksCanvas" class="fireworks-canvas"></canvas>
+
+  <!-- ================================================================= -->
+  <!-- ACT 1: PROLOGUE — THE INTERACTIVE HANGING LAMP                    -->
+  <!-- ================================================================= -->
+  <div id="prologueOverlay" class="prologue-overlay">
+    <div class="lamp-system">
+      <div class="lamp-cord-wire"></div>
+      <div class="lamp-shade">
+        <div class="lamp-glow-bulb"></div>
+      </div>
+      <!-- Pull chain with brass tassel -->
+      <div class="pull-chain-wrapper" id="pullChainBtn" role="button" tabindex="0" aria-label="Pull lamp chain to turn on lights">
+        <div class="pull-chain-beads">
+          <span class="bead"></span>
+          <span class="bead"></span>
+          <span class="bead"></span>
+          <span class="bead"></span>
+          <span class="bead"></span>
+          <span class="bead"></span>
+        </div>
+        <div class="pull-tassel">
+          <span class="tassel-ring"></span>
+          <span class="tassel-glow"></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="prologue-prompt">
+      <div class="prologue-badge">For Taymi's Eyes Only ☕</div>
+      <h1 class="prologue-title">It’s dark in here...</h1>
+      <p class="prologue-text">Pull the lamp cord to illuminate your birthday story.</p>
+      <div class="prologue-hint">
+        <span class="hand-icon">👇</span>
+        <span>Click or drag the chain</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================================================================= -->
+  <!-- FLOATING NAVIGATION & VINYL AUDIO PLAYER                          -->
+  <!-- ================================================================= -->
+  <header class="floating-nav-container" id="floatingNav">
+    <nav class="nav-glass-pill">
+      <div class="nav-brand">
+        <span class="brand-coffee-icon">☕</span>
+        <span class="brand-name">Taymi's Story</span>
+      </div>
+      <div class="nav-links">
+        <a href="#dossier" class="nav-link">The Dossier</a>
+        <a href="#trilogy" class="nav-link">The 3 Films</a>
+        <a href="#core-memory" class="nav-link">Core Memory</a>
+        <a href="#secret-letters" class="nav-link">Secret Letters</a>
+        <a href="#birthday-cake" class="nav-link nav-highlight">Make a Wish 🎂</a>
+      </div>
+      <div class="nav-audio-widget" id="vinylPlayer">
+        <div class="vinyl-disc" id="vinylDisc">
+          <div class="vinyl-grooves"></div>
+          <div class="vinyl-center-label">
+            <span class="label-dot"></span>
+          </div>
+        </div>
+        <div class="vinyl-info">
+          <span class="vinyl-status" id="vinylStatus">Paused</span>
+          <span class="vinyl-title">Warm Sunbeam Melody</span>
+        </div>
+        <button class="vinyl-toggle-btn" id="audioToggleBtn" title="Play/Pause music" aria-label="Toggle background music">
+          <svg id="playIcon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          <svg id="pauseIcon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" style="display:none;"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hidden HTML5 Audio element for custom MP3 -->
+  <audio id="customAudio" preload="auto" loop src="assets/music.mp3"></audio>
+
+  <!-- ================================================================= -->
+  <!-- MAIN STORY EXPERIENCE                                             -->
+  <!-- ================================================================= -->
+  <main class="story-wrapper" id="storyContent">
+
+    <!-- HERO INTRODUCTION -->
+    <section class="story-hero-section">
+      <div class="hero-decorative-tag">
+        <span class="tag-sparkle">✨</span>
+        <span>A Chapter Dedicated To You</span>
+        <span class="tag-sparkle">✨</span>
+      </div>
+      <h1 class="hero-main-title">
+        Happy Birthday, <span class="highlight-taymi">Taymi</span>.
+      </h1>
+      <p class="hero-subtitle">
+        To the girl with the most comforting presence, the quickest laugh, and a heart made of pure gold. 
+        Here is a small tribute to the sunshine you bring everywhere you go.
+      </p>
+      <div class="hero-scroll-invite">
+        <span>Scroll down to enter the archives</span>
+        <div class="scroll-arrow">↓</div>
+      </div>
+    </section>
+
+    <!-- ACT 2: THE TAYMI DOSSIER & THE FRIENDSHIP RECEIPT -->
+    <section class="section-container" id="dossier">
+      <div class="section-badge">Exhibit I: The Personality</div>
+      <h2 class="section-heading">The Official Taymi Profile</h2>
+      <p class="section-subtext">Scientific, peer-reviewed proof that there is nobody else quite like you on earth.</p>
+
+      <div class="dossier-grid">
+        <!-- Card 1: ID Card -->
+        <div class="glass-card dossier-card">
+          <div class="card-header-row">
+            <span class="chip-badge">Certified Good Human</span>
+            <span class="serial-no">ID #TAYMI-0910</span>
+          </div>
+
+          <div class="dossier-content">
+            <div class="dossier-avatar-box">
+              <div class="avatar-ring">
+                <span class="avatar-emoji">👑</span>
+              </div>
+              <div class="avatar-meta">
+                <h3 class="dossier-name">Taymi</h3>
+                <span class="dossier-role">Chief Happiness Officer & Best Friend</span>
+              </div>
+            </div>
+
+            <ul class="stats-list">
+              <li class="stat-item">
+                <span class="stat-label">Aesthetic Palette</span>
+                <span class="stat-value">Earthy Browns, Warm Mocha, Soft Caramel 🤎</span>
+              </li>
+              <li class="stat-item">
+                <span class="stat-label">Superpower</span>
+                <span class="stat-value">Making everyone around her feel instantly at home</span>
+              </li>
+              <li class="stat-item">
+                <span class="stat-label">Vulnerability</span>
+                <span class="stat-value">Laughing at her own joke before finishing the sentence</span>
+              </li>
+              <li class="stat-item">
+                <span class="stat-label">Friendship Rating</span>
+                <span class="stat-value">11/10 (Irreplaceable • No returns accepted)</span>
+              </li>
+            </ul>
+
+            <div class="dossier-quote">
+              <p>“Some people brighten a room by entering it. Taymi does it just by existing.”</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: The Tear-off Friendship Receipt -->
+        <div class="receipt-wrapper">
+          <div class="receipt-paper" id="friendshipReceipt">
+            <div class="receipt-jagged-top"></div>
+            
+            <div class="receipt-inner">
+              <div class="receipt-header">
+                <div class="receipt-logo">*** TAYMI & CO. ***</div>
+                <div class="receipt-sub">OFFICIAL FRIENDSHIP STORE</div>
+                <div class="receipt-divider">================================</div>
+                <div class="receipt-meta-row">
+                  <span>DATE: FOREVER & ALWAYS</span>
+                  <span>CASHIER: #1 FAN</span>
+                </div>
+                <div class="receipt-divider">--------------------------------</div>
+              </div>
+
+              <div class="receipt-items">
+                <div class="receipt-row">
+                  <span class="item-name">Uncontrolled Laughing Attacks</span>
+                  <span class="item-price">9,999 hrs</span>
+                </div>
+                <div class="receipt-row">
+                  <span class="item-name">"What Should We Eat?" Debates</span>
+                  <span class="item-price">4,120 rounds</span>
+                </div>
+                <div class="receipt-row">
+                  <span class="item-name">Emergency Emotional Support</span>
+                  <span class="item-price">UNLIMITED</span>
+                </div>
+                <div class="receipt-row">
+                  <span class="item-name">Inside Jokes No One Else Gets</span>
+                  <span class="item-price"> priceless</span>
+                </div>
+                <div class="receipt-row">
+                  <span class="item-name">Late-Night Wisdom & Rants</span>
+                  <span class="item-price"> ∞ Units</span>
+                </div>
+                <div class="receipt-row">
+                  <span class="item-name">Making Days 100x Better</span>
+                  <span class="item-price">100% Rate</span>
+                </div>
+              </div>
+
+              <div class="receipt-divider">--------------------------------</div>
+              <div class="receipt-summary">
+                <div class="receipt-row bold">
+                  <span>SUBTOTAL:</span>
+                  <span>PRICELESS</span>
+                </div>
+                <div class="receipt-row bold">
+                  <span>DISCOUNT (Bestie Perk):</span>
+                  <span>-100%</span>
+                </div>
+                <div class="receipt-row total-row">
+                  <span>TOTAL BALANCE:</span>
+                  <span>ONE HUGE HUG 🫂</span>
+                </div>
+              </div>
+              <div class="receipt-divider">================================</div>
+
+              <div class="receipt-barcode">
+                <div class="barcode-lines"></div>
+                <span class="barcode-num">* HAPPY-BIRTHDAY-TAYMI *</span>
+              </div>
+              <div class="receipt-footer-msg">
+                THANK YOU FOR BEING YOU.<br>
+                PLEASE COME AGAIN TOMORROW.
+              </div>
+            </div>
+
+            <div class="receipt-jagged-bottom"></div>
+          </div>
+          
+          <button class="tear-receipt-btn" id="receiptStampBtn">
+            <span>✨ Stamp Receipt with Love</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACT 3: "THE TAYMI TRILOGY" — 3 FEATURED VIDEO EXHIBITS -->
+    <section class="section-container" id="trilogy">
+      <div class="section-badge">Exhibit II: The Archives</div>
+      <h2 class="section-heading">The Taymi Trilogy (3 Rare Films)</h2>
+      <p class="section-subtext">They say memories fade, but these three clips captured perfection in motion.</p>
+
+      <div class="trilogy-grid">
+        <!-- Film 1 -->
+        <article class="film-card" data-film="1">
+          <div class="film-sprocket-top"></div>
+          <div class="film-media-box">
+            <video class="film-video" id="videoElement1" playsinline loop preload="metadata">
+              <source src="assets/video1.mp4" type="video/mp4">
+            </video>
+            <div class="video-overlay" id="videoOverlay1">
+              <button class="play-circle-btn" aria-label="Play Film 1">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+              </button>
+              <span class="play-label">Play Clip</span>
+            </div>
+            <div class="film-frame-number">01 // THE CANDID SOUL</div>
+          </div>
+          <div class="film-sprocket-bottom"></div>
+
+          <div class="film-caption-box">
+            <h3 class="film-title">Film I: In Her Natural Element</h3>
+            <p class="film-desc">
+              Zero rehearsals, zero filters—just Taymi being effortlessly hilarious and genuinely radiant.
+            </p>
+            <div class="film-actions">
+              <button class="reaction-heart-btn" data-video="1">
+                <span class="heart-icon">🤎</span>
+                <span class="reaction-text">Heart this</span>
+                <span class="reaction-count" id="countV1">24</span>
+              </button>
+              <span class="director-note">Director’s Cut: 100% Uncut Sunshine</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Film 2 -->
+        <article class="film-card" data-film="2">
+          <div class="film-sprocket-top"></div>
+          <div class="film-media-box">
+            <video class="film-video" id="videoElement2" playsinline loop preload="metadata">
+              <source src="assets/video2.mp4" type="video/mp4">
+            </video>
+            <div class="video-overlay" id="videoOverlay2">
+              <button class="play-circle-btn" aria-label="Play Film 2">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+              </button>
+              <span class="play-label">Play Clip</span>
+            </div>
+            <div class="film-frame-number">02 // MAIN CHARACTER</div>
+          </div>
+          <div class="film-sprocket-bottom"></div>
+
+          <div class="film-caption-box">
+            <h3 class="film-title">Film II: Main Character Energy</h3>
+            <p class="film-desc">
+              The camera literally couldn't look away. Proof that wherever you are, the entire room lights up.
+            </p>
+            <div class="film-actions">
+              <button class="reaction-heart-btn" data-video="2">
+                <span class="heart-icon">✨</span>
+                <span class="reaction-text">Glow up</span>
+                <span class="reaction-count" id="countV2">42</span>
+              </button>
+              <span class="director-note">Vibe Rating: Undisputed Legend</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Film 3 -->
+        <article class="film-card" data-film="3">
+          <div class="film-sprocket-top"></div>
+          <div class="film-media-box">
+            <video class="film-video" id="videoElement3" playsinline loop preload="metadata">
+              <source src="assets/video3.mp4" type="video/mp4">
+            </video>
+            <div class="video-overlay" id="videoOverlay3">
+              <button class="play-circle-btn" aria-label="Play Film 3">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+              </button>
+              <span class="play-label">Play Clip</span>
+            </div>
+            <div class="film-frame-number">03 // PURE JOY</div>
+          </div>
+          <div class="film-sprocket-bottom"></div>
+
+          <div class="film-caption-box">
+            <h3 class="film-title">Film III: The Contagious Smile</h3>
+            <p class="film-desc">
+              If happiness were a sound, it would be your laugh. You can't watch this without immediately grinning.
+            </p>
+            <div class="film-actions">
+              <button class="reaction-heart-btn" data-video="3">
+                <span class="heart-icon">☕</span>
+                <span class="reaction-text">Comfort vibe</span>
+                <span class="reaction-count" id="countV3">37</span>
+              </button>
+              <span class="director-note">Status: Antidote to bad days</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ACT 4: "THE CORE MEMORY" — THE SPECIAL PHOTO WITH CLOSE FRIEND -->
+    <section class="section-container" id="core-memory">
+      <div class="section-badge">Exhibit III: The Crown Jewel</div>
+      <h2 class="section-heading">The Core Memory</h2>
+      <p class="section-subtext">Some photos are just pixels. This one holds a whole universe of warmth.</p>
+
+      <div class="polaroid-stage">
+        <div class="polaroid-wrapper" id="polaroidCard" tabindex="0" role="button" aria-label="Flip memory card to read handwritten message">
+          <!-- Front Side of Polaroid -->
+          <div class="polaroid-face polaroid-front">
+            <div class="tape-strip"></div>
+            <div class="polaroid-photo-frame">
+              
+              <img src="assets/taymi-friend.jpg" 
+                   alt="Taymi and a very dear friend sharing a warm memory" 
+                   class="polaroid-img"
+                   id="polaroidPhoto">
+              <div class="photo-vignette"></div>
+            </div>
+            <div class="polaroid-caption-area">
+              <p class="handwritten-title">Taymi & our favorite person ✨</p>
+              <p class="handwritten-date">A moment we never want to forget</p>
+              <div class="flip-hint-pill">
+                <span>Hover or tap to read the secret note</span>
+                <span class="flip-icon">↺</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Back Side of Polaroid -->
+          <div class="polaroid-face polaroid-back">
+            <div class="tape-strip"></div>
+            <div class="postage-stamp">
+              <span class="stamp-postmark">SPECIAL AIRMAIL</span>
+              <span class="stamp-heart">🤎</span>
+            </div>
+
+            <div class="handwritten-letter-back">
+              <h4 class="back-title">Dear Taymi,</h4>
+              <p>
+                Looking at this photo reminds me why certain people in our lives are pure blessings.
+                With you two, there’s never a need for pretend smiles or fancy places. 
+                Just real conversation, deep laughs, and that calm feeling of being completely understood.
+              </p>
+              <p>
+                Thank you for being the glue, the spark, and the warmest cup of cocoa on cold days. 
+                We love you more than words can stitch together.
+              </p>
+              <p class="back-signature">Forever in your corner,</p>
+              <p class="back-names">— Your People ☕</p>
+            </div>
+
+            <div class="flip-hint-pill bottom">
+              <span>Tap to flip back</span>
+              <span class="flip-icon">↻</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACT 5: "OPEN WHEN..." 4 SECRET LETTERS -->
+    <section class="section-container" id="secret-letters">
+      <div class="section-badge">Exhibit IV: Secret Mail</div>
+      <h2 class="section-heading">The “Open When...” Letters</h2>
+      <p class="section-subtext">Four envelopes sealed with wax. Click whichever one your heart needs today.</p>
+
+      <div class="envelopes-grid">
+        <!-- Envelope 1 -->
+        <div class="envelope-card" data-letter="1" role="button" tabindex="0">
+          <div class="wax-seal">
+            <span>✨</span>
+          </div>
+          <div class="envelope-flap"></div>
+          <div class="envelope-body">
+            <span class="envelope-tag">Letter No. 01</span>
+            <h3 class="envelope-title">Open when you need to know how loved you are.</h3>
+            <span class="envelope-callout">Click to unseal</span>
+          </div>
+        </div>
+
+        <!-- Envelope 2 -->
+        <div class="envelope-card" data-letter="2" role="button" tabindex="0">
+          <div class="wax-seal">
+            <span>😂</span>
+          </div>
+          <div class="envelope-flap"></div>
+          <div class="envelope-body">
+            <span class="envelope-tag">Letter No. 02</span>
+            <h3 class="envelope-title">Open when you need an instant laugh or reality check.</h3>
+            <span class="envelope-callout">Click to unseal</span>
+          </div>
+        </div>
+
+        <!-- Envelope 3 -->
+        <div class="envelope-card" data-letter="3" role="button" tabindex="0">
+          <div class="wax-seal">
+            <span>☕</span>
+          </div>
+          <div class="envelope-flap"></div>
+          <div class="envelope-body">
+            <span class="envelope-tag">Letter No. 03</span>
+            <h3 class="envelope-title">Open when the world feels too loud or heavy.</h3>
+            <span class="envelope-callout">Click to unseal</span>
+          </div>
+        </div>
+
+        <!-- Envelope 4 -->
+        <div class="envelope-card highlight" data-letter="4" role="button" tabindex="0">
+          <div class="wax-seal gold">
+            <span>🎂</span>
+          </div>
+          <div class="envelope-flap"></div>
+          <div class="envelope-body">
+            <span class="envelope-tag">The Birthday Special</span>
+            <h3 class="envelope-title">Open right now on your birthday!</h3>
+            <span class="envelope-callout">Click to unseal</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACT 6: THE GRAND RITUAL — BIRTHDAY CAKE & MAKE A WISH -->
+    <section class="section-container cake-section" id="birthday-cake">
+      <div class="section-badge">The Grand Finale</div>
+      <h2 class="section-heading">Make a Wish, Taymi</h2>
+      <p class="section-subtext">
+        Close your eyes, think of the sweetest wish your heart desires, and blow out your candle.
+      </p>
+
+      <div class="cake-ritual-stage">
+        <!-- Interactive 3D/CSS Chocolate & Mocha Cake -->
+        <div class="cake-wrapper" id="cakeWrapper">
+          <div class="cake-plate"></div>
+          
+          <!-- Cake Base Tier -->
+          <div class="cake-tier cake-bottom-tier">
+            <div class="cake-frosting-swirls"></div>
+            <div class="cake-sponge-mocha"></div>
+          </div>
+
+          <!-- Cake Middle Tier -->
+          <div class="cake-tier cake-middle-tier">
+            <div class="cake-chocolate-drips">
+              <span class="drip d1"></span>
+              <span class="drip d2"></span>
+              <span class="drip d3"></span>
+              <span class="drip d4"></span>
+              <span class="drip d5"></span>
+            </div>
+          </div>
+
+          <!-- Cake Top Tier with Piping -->
+          <div class="cake-tier cake-top-tier">
+            <div class="cake-topper-text">TAYMI</div>
+          </div>
+
+          <!-- The Candle -->
+          <div class="candle-stand" id="candleStand">
+            <div class="candle-body">
+              <div class="candle-stripes"></div>
+              <div class="candle-wick"></div>
+              <!-- The Flame -->
+              <div class="candle-flame" id="candleFlame">
+                <div class="flame-inner"></div>
+                <div class="flame-halo"></div>
+              </div>
+              <!-- Realistic Smoke particles on blowout -->
+              <div class="candle-smoke" id="candleSmoke">
+                <span class="smoke-puff p1"></span>
+                <span class="smoke-puff p2"></span>
+                <span class="smoke-puff p3"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Wish Control Action -->
+        <div class="wish-controls" id="wishControls">
+          <p class="wish-instructions" id="wishInstructions">
+            Hold down the button below (or press & hold Space) to blow! 💨
+          </p>
+          <div class="hold-blow-button-wrapper">
+            <div class="blow-progress-circle">
+              <svg viewBox="0 0 100 100" class="progress-svg">
+                <circle cx="50" cy="50" r="45" class="progress-bg"></circle>
+                <circle cx="50" cy="50" r="45" class="progress-bar" id="blowProgressBar"></circle>
+              </svg>
+            </div>
+            <button class="blow-candle-btn" id="blowCandleBtn" aria-label="Hold to blow out candle">
+              <span class="btn-icon">🕯️</span>
+              <span class="btn-label" id="blowBtnLabel">Hold to Blow</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Celebratory Grand Banner (Revealed on Blowout) -->
+        <div class="celebration-banner-modal" id="celebrationBanner">
+          <div class="celebration-glow"></div>
+          <div class="celebration-content">
+            <span class="celebration-sparkles">✨ 🎉 ✨</span>
+            <h2 class="celebration-title">HAPPY BIRTHDAY, TAYMI!</h2>
+            <p class="celebration-wish">
+              May every dream you whispered into that candle take flight this year. 
+              You deserve boundless happiness, peaceful mornings, hilarious adventures, and love that never ends.
+            </p>
+            <div class="celebration-actions">
+              <button class="fireworks-burst-btn" id="fireworksBurstBtn">
+                <span>🎆 Launch More Fireworks!</span>
+              </button>
+              <button class="relight-candle-btn" id="relightCandleBtn">
+                <span>🕯️ Relight & Wish Again</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="story-footer">
+      <div class="footer-coffee">
+        <span class="coffee-cup">☕</span>
+        <div class="coffee-steam">
+          <span>~</span><span>~</span>
+        </div>
+      </div>
+      <p class="footer-text">Made with infinite warmth and love for Taymi’s special day.</p>
+      <p class="footer-sub">Stay exactly as radiant as you are.</p>
+    </footer>
+
+  </main>
+
+  <!-- ================================================================= -->
+  <!-- MODALS FOR SECRET ENVELOPES                                       -->
+  <!-- ================================================================= -->
+  <div class="letter-modal-backdrop" id="letterModalBackdrop" aria-hidden="true">
+    <div class="letter-modal-container" id="letterModalContainer">
+      <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close letter">&times;</button>
+      <div class="parchment-sheet">
+        <div class="parchment-stamp">POSTAL CONFIDENTIAL</div>
+        <h3 class="parchment-title" id="modalLetterTitle">Letter Title</h3>
+        <div class="parchment-body" id="modalLetterContent">
+          <!-- Populated dynamically via app.js -->
+        </div>
+        <div class="parchment-signoff">
+          <p>Always with you,</p>
+          <p class="signoff-signature">— Your Best Friends 🤎</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
+
