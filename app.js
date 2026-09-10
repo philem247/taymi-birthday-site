@@ -499,6 +499,7 @@
 
   function startBlowing() {
     if (isCandleExtinguished) return;
+    if (blowHoldTimer) return;
     initAudioContext();
 
     blowBtnLabel.textContent = 'Blowing...';
@@ -559,14 +560,15 @@
     }, 600);
   }
 
-  // Mouse / Touch Event Handlers for Blowout Button
-  blowCandleBtn.addEventListener('mousedown', startBlowing);
-  window.addEventListener('mouseup', stopBlowing);
-  blowCandleBtn.addEventListener('touchstart', (e) => {
+  // Pointer handlers for mouse/touch/pen hold interaction
+  blowCandleBtn.addEventListener('pointerdown', (e) => {
     e.preventDefault();
+    blowCandleBtn.setPointerCapture(e.pointerId);
     startBlowing();
   });
-  window.addEventListener('touchend', stopBlowing);
+  blowCandleBtn.addEventListener('pointerup', stopBlowing);
+  blowCandleBtn.addEventListener('pointercancel', stopBlowing);
+  blowCandleBtn.addEventListener('lostpointercapture', stopBlowing);
 
   // Spacebar hold support
   let isSpaceHeld = false;
@@ -815,4 +817,3 @@
   }
 
 })();
-
